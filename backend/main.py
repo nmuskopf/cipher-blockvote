@@ -65,7 +65,7 @@ class Blockchain:
                     'voter_id': voter_id,
                     'candidate': candidate,
                 }
-                vote['hash'] = hash_vote(vote)
+                vote['hash'] = self.hash_vote(vote)
                 self.current_votes.append(vote)
                 return self.last_block['index'] + 1
             except IntegrityError as e:
