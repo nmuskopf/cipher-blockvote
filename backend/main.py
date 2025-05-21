@@ -22,6 +22,8 @@ load_dotenv()
 db_url = os.getenv('MYSQL_URL')
 engine = create_engine(db_url)
 
+ALLOWED_CANDIDATES = []
+
 def load_allowed_candidates():
     global ALLOWED_CANDIDATES
     with engine.connect() as conn:
